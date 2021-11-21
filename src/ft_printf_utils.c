@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/20 19:43:02 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/21 23:04:11 by bberkass         ###   ########.fr       */
+/*   Created: 2021/11/21 22:59:22 by bberkass          #+#    #+#             */
+/*   Updated: 2021/11/21 23:00:42 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../includes/ft_printf.h"
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+void ft_putstr(char *s)
+{
+	
+	int	i;
 
-int		arg_count(char *s);
-int 	ft_prinft(char *s, ...);
-int		check_arg(char c);
-char	*parse(char *s);
-void	ft_putstr(char *s);
-
-#endif
+	i = 0;
+	while(s[i])
+		write(1, &s[i++], 1);
+}
