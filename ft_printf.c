@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:43:58 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/21 23:36:39 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/21 23:40:09 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,12 +88,13 @@ int	ft_printf(char *s, ...)
 	{
 		if(s[i] == '%' && s[i + 1] && check_arg(s[i + 1]))
 		{
-			
 			if(types[j] == 's')
 				ft_putstr(va_arg(ap, char *));
-			
+			else if (types[j] == 'd')
+				ft_putstr(ft_itoa(va_arg(ap, int)));
 			else
 				ft_putstr("unknown type !");
+			
 			i++;
 			j++;
 		}

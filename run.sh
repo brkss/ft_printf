@@ -1,1 +1,1 @@
- gcc */*.c *.c && ./a.out
+ gcc */*.c *.c libft.a && ./a.out

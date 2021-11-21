@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:43:02 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/21 23:32:54 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/22 00:04:07 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "../libft/libft.h"
+
+char    *ft_itoa(int n);
+char	*ft_strdup(const char *s1);
 
 int		arg_count(char *s);
 int 	ft_printf(char *s, ...);
