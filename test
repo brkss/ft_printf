@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 18:44:01 by bberkass          #+#    #+#             */
+/*   Updated: 2021/11/21 20:04:21 by bberkass         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdarg.h>
+#include <stdio.h>
+
+int sum(int, ...);
+
+int main()
+{
+	printf("sum => %d \n", sum(4, 10, 20, 30, 40));
+	return (0);
+}
+
+int sum(int num_args, ...)
+{
+	va_list ap;
+	int sum;
+	int i;
+
+	i = 0;
+	sum = 0;
+	va_start(ap, num_args);
+	while(i < num_args)
+	{
+		sum += va_arg(ap, int);
+		i++;
+	}
+	va_end(ap);
+
+	return (sum);
+}
