@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:43:58 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/21 22:58:52 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/21 23:36:39 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,19 +75,32 @@ int	ft_printf(char *s, ...)
 	va_list ap;
 	int		i;
 	int		count;
+	char	*types;
+	int		j;
 
+	j = 0;
 	i = 0;
-	count = arg_count(s);
 	r = 0;
+	count = arg_count(s);
+	types = parse(s);
 	va_start(ap, s);
-	while(i < count)
+	while(s[i])
 	{
-
-	}	
-	/*
-	printf("=> %s \n", va_arg(ap, char *));
-	printf("=> %d \n", va_arg(ap, int));
-	*/
+		if(s[i] == '%' && s[i + 1] && check_arg(s[i + 1]))
+		{
+			
+			if(types[j] == 's')
+				ft_putstr(va_arg(ap, char *));
+			
+			else
+				ft_putstr("unknown type !");
+			i++;
+			j++;
+		}
+		else
+			write(1, &s[i], 1);
+		i++;
+	}
 	va_end(ap);
 	return (r);	
 }
