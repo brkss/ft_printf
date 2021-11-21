@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 22:59:22 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/21 23:00:42 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/22 00:07:42 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,9 @@ void ft_putstr(char *s)
 	i = 0;
 	while(s[i])
 		write(1, &s[i++], 1);
+}
+
+void ft_putchr(char c)
+{
+	write(1, &c, 1);
 }

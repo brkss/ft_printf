@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:43:02 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/22 00:04:07 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/22 00:09:15 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int 	ft_printf(char *s, ...);
 int		check_arg(char c);
 char	*parse(char *s);
 void	ft_putstr(char *s);
+void	ft_putchr(char c);
 
 #endif
