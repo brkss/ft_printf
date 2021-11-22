@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 01:20:12 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/22 02:07:56 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/22 03:44:33 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,9 @@ void	ft_converthex(int nb, int maj)
 		ft_converthex(n / 16, maj);
 		ft_putchr(t[n%16]);
 	}
+}
+
+void	ft_putpointer(                  unsigned long n)
+{
+
 }
