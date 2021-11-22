@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:43:02 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/22 00:58:47 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/22 02:11:41 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include "../libft/libft.h"
 
 void	ft_putnbr(int n);
+void	ft_converthex(int nb, int maj);
 
 int		arg_count(char *s);
 int 	ft_printf(char *s, ...);

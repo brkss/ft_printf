@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:42:23 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/22 01:18:06 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/22 02:11:19 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int main()
 {
 
 	//ft_printf("%%this%dis how it works %s %d %c = %c ", 99, "hello world", 15, 'z', 'Z');
-	ft_printf("unsigned int = %u ", 4294967295);
+	//ft_printf("unsigned int = %u ", 4294967295);
+	ft_printf("ft hex => %x \n", 1294967295);
+	printf("og hex => %x \n", 1294967295);
 	//ft_putstr("hello world \n");
 	//printf("=> %s \n", parse("%h %u ello %% this %%%ifirst arg %s %r %d %x %X"));
 	//printf("%%%d", 10);
