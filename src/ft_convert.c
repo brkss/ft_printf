@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/20 19:43:02 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/22 00:58:47 by bberkass         ###   ########.fr       */
+/*   Created: 2021/11/22 01:20:12 by bberkass          #+#    #+#             */
+/*   Updated: 2021/11/22 02:07:56 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../includes/ft_printf.h"
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include "../libft/libft.h"
+void	ft_converthex(int nb, int maj)
+{
+	char	*t;
+	unsigned int n;
 
-void	ft_putnbr(int n);
-
-int		arg_count(char *s);
-int 	ft_printf(char *s, ...);
-int		check_arg(char c);
-char	*parse(char *s);
-void	ft_putstr(char *s);
-void	ft_putchr(char c);
-void	ft_putnbr_u(unsigned int n);
-
-#endif
+	n = nb;
+	if(maj)
+		t = "0123456789ABCDEF";
+	else
+		t = "0123456789abcdef";
+	
+	if(n < 16)
+	{
+		ft_putchr(t[n]);
+	}
+	else
+	{
+		ft_converthex(n / 16, maj);
+		ft_putchr(t[n%16]);
+	}
+}

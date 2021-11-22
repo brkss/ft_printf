@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 22:59:22 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/22 00:52:09 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/22 01:01:49 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,19 @@ void	ft_putnbr(int n)
 	{
 		ft_putchr('-');
 		ft_putnbr(n * -1);
+	}
+}
+
+
+void	ft_putnbr_u(unsigned int n)
+{
+	if (n < 10 && n >= 0)
+	{
+		ft_putchr(n + '0');
+	}
+	else 
+	{
+		ft_putnbr_u(n / 10);
+		ft_putchr(n % 10 + '0');
 	}
 }
