@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:43:58 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/22 03:44:29 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/22 13:21:16 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ int	ft_printf(char *s, ...)
 				ft_putstr(va_arg(ap, char *));
 			else if (types[j] == 'd')
 				ft_putnbr(va_arg(ap, int));
-			/*else if (types[j] == 'p')
-				ft_putpointer()*/
+			else if (types[j] == 'p')
+				ft_putpointer(va_arg(ap, int64_t));
 			else if (types[j] == 'i')
 				ft_putnbr(va_arg(ap, int));
 			else if (types[j] == 'u')

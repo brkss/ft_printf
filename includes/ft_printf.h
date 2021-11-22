@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:43:02 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/22 02:11:41 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/22 13:16:43 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 void	ft_putnbr(int n);
 void	ft_converthex(int nb, int maj);
+void	ft_putpointer(unsigned long n);
 
 int		arg_count(char *s);
 int 	ft_printf(char *s, ...);

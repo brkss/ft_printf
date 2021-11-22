@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:42:23 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/22 02:11:19 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/22 13:18:23 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 int main()
 {
 
+	char *s = "hello";
+	printf("printing pointers => %p \n", s);
+	ft_printf("printing pointers => %p \n", s);
+	
 	//ft_printf("%%this%dis how it works %s %d %c = %c ", 99, "hello world", 15, 'z', 'Z');
 	//ft_printf("unsigned int = %u ", 4294967295);
 	ft_printf("ft hex => %x \n", 1294967295);
