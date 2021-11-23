@@ -5,7 +5,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = *.c */*.c
+SRCS = $(wildcard *.c) 
 
 OBJS = $(SRCS:.c=.o)
 
@@ -14,7 +14,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 
 %.o:%.c
-	$(CC) $(CFLAGS) -c $< ${<:.c=.o}
+	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
 	ar rcs $(NAME) ${<:.c=.o}
 
 clean:

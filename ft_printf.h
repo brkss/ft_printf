@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:43:02 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/22 13:16:43 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/22 21:06:07 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 #include <unistd.h>
 #include "../libft/libft.h"
 
-void	ft_putnbr(int n);
-void	ft_converthex(int nb, int maj);
-void	ft_putpointer(unsigned long n);
+void	ft_putnbr(int n, int *len);
+void	ft_converthex(int nb, int maj, int *len);
+void	ft_putpointer(unsigned long n, int *len);
 
-int		arg_count(char *s);
-int 	ft_printf(char *s, ...);
+int		arg_count(const char *s);
+int 	ft_printf(const char *s, ...);
 int		check_arg(char c);
-char	*parse(char *s);
-void	ft_putstr(char *s);
+char	*parse(const char *s);
+void	ft_putstr(char *s, int *len);
 void	ft_putchr(char c);
-void	ft_putnbr_u(unsigned int n);
+void	ft_putnbr_u(unsigned int n, int *len);
 
 #endif
