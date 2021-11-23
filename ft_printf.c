@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:43:58 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/23 21:57:02 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/23 23:13:51 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	check_arg(char c)
 
 	i = 0;
 	s = "cspdiuxX%";
-	while(s[i])
+	while (s[i])
 	{
-		if(s[i] == c)
+		if (s[i] == c)
 			return (1);
 		i++;
 	}
@@ -35,16 +35,16 @@ int	arg_count(const char *s)
 
 	l = 0;
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
-		if(s[i] == '%' && s[i + 1] && check_arg(s[i + 1]))
+		if (s[i] == '%' && s[i + 1] && check_arg(s[i + 1]))
 			l++;
 		i++;
 	}
-	return(l);
+	return (l);
 }
 
-char *parse(const char *s)
+char	*parse(const char *s)
 {
 	int		i;
 	int		count;
@@ -52,18 +52,18 @@ char *parse(const char *s)
 	int		j;
 
 	count = arg_count(s);
-	if(count == 0)
+	if (count == 0)
 		return (NULL);
 	args = (char *)malloc(sizeof(char) * count + 1);
-	if(!args)
+	if (!args)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while(s[i])
+	while (s[i])
 	{
-		if(s[i] == '%' && s[i + 1] && check_arg(s[i + 1]))
-			args[j++] = s[i + 1];	
-		if(s[i + 1] && s[i] == '%' && s[i + 1] == '%')
+		if (s[i] == '%' && s[i + 1] && check_arg(s[i + 1]))
+			args[j++] = s[i + 1];
+		if (s[i + 1] && s[i] == '%' && s[i + 1] == '%')
 			i++;
 		i++;
 	}
@@ -74,7 +74,7 @@ char *parse(const char *s)
 int	ft_printf(const char *s, ...)
 {
 	int		r;
-	va_list ap;
+	va_list	ap;
 	int		i;
 	char	*types;
 	int		j;
@@ -84,12 +84,11 @@ int	ft_printf(const char *s, ...)
 	r = 0;
 	types = parse(s);
 	va_start(ap, s);
-	while(s[i])
+	while (s[i])
 	{
-		if(s[i] == '%' && s[i + 1] && check_arg(s[i + 1]))
+		if (s[i] == '%' && s[i + 1] && check_arg(s[i + 1]))
 		{
-			
-			if(types[j] == 's')
+			if (types[j] == 's')
 				ft_putstr(va_arg(ap, char *), &r);
 			else if (types[j] == 'd')
 				ft_putnbr(va_arg(ap, int), &r);
@@ -121,10 +120,9 @@ int	ft_printf(const char *s, ...)
 			write(1, &s[i], 1);
 			r++;
 		}
-		
 		i++;
 	}
 	va_end(ap);
 	free(types);
-	return (r);	
+	return (r);
 }

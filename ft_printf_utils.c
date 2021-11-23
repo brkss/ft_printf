@@ -6,30 +6,29 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 22:59:22 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/22 22:33:18 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/23 23:07:17 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_putstr(char *s, int *len)
+void	ft_putstr(char *s, int *len)
 {
-	
 	int	i;
 
-	if(!s)
+	if (!s)
 	{
 		write(1, "(null)", 6);
 		*len += 6;
 		return ;
 	}
 	i = 0;
-	while(s[i])
+	while (s[i])
 		write(1, &s[i++], 1);
 	*len += i;
 }
 
-void ft_putchr(char c)
+void	ft_putchr(char c)
 {
 	write(1, &c, 1);
 }
@@ -60,7 +59,6 @@ void	ft_putnbr(int n, int *len)
 	}
 }
 
-
 void	ft_putnbr_u(unsigned int n, int *len)
 {
 	if (n < 10 && n >= 0)
@@ -68,7 +66,7 @@ void	ft_putnbr_u(unsigned int n, int *len)
 		ft_putchr(n + '0');
 		*len += 1;
 	}
-	else 
+	else
 	{
 		ft_putnbr_u(n / 10, len);
 		ft_putchr(n % 10 + '0');
