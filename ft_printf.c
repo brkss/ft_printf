@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:43:58 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/23 23:13:51 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/24 00:17:46 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,34 @@ char	*parse(const char *s)
 	return (args);
 }
 
+void	ft_handle_targets(va_list ap, char *types, int j, int *r)
+{
+	if (types[j] == 's')
+		ft_putstr(va_arg(ap, char *), r);
+	else if (types[j] == 'd')
+		ft_putnbr(va_arg(ap, int), r);
+	else if (types[j] == 'p')
+		ft_putpointer(va_arg(ap, int64_t), r);
+	else if (types[j] == 'i')
+		ft_putnbr(va_arg(ap, int), r);
+	else if (types[j] == 'u')
+		ft_putnbr_u(va_arg(ap, unsigned int), r);
+	else if (types[j] == 'c')
+	{
+		ft_putchr(va_arg(ap, int));
+		*r += 1;
+	}
+	else if (types[j] == 'X')
+		ft_converthex(va_arg(ap, int), 1, r);
+	else if (types[j] == 'x')
+		ft_converthex(va_arg(ap, int), 0, r);
+	else if (types[j] == '%')
+	{
+		ft_putchr('%');
+		*r += 1;
+	}
+}
+
 int	ft_printf(const char *s, ...)
 {
 	int		r;
@@ -88,38 +116,11 @@ int	ft_printf(const char *s, ...)
 	{
 		if (s[i] == '%' && s[i + 1] && check_arg(s[i + 1]))
 		{
-			if (types[j] == 's')
-				ft_putstr(va_arg(ap, char *), &r);
-			else if (types[j] == 'd')
-				ft_putnbr(va_arg(ap, int), &r);
-			else if (types[j] == 'p')
-				ft_putpointer(va_arg(ap, int64_t), &r);
-			else if (types[j] == 'i')
-				ft_putnbr(va_arg(ap, int), &r);
-			else if (types[j] == 'u')
-				ft_putnbr_u(va_arg(ap, unsigned int), &r);
-			else if (types[j] == 'c')
-			{
-				ft_putchr(va_arg(ap, int));
-				r++;
-			}
-			else if (types[j] == 'X')
-				ft_converthex(va_arg(ap, int), 1, &r);
-			else if (types[j] == 'x')
-				ft_converthex(va_arg(ap, int), 0, &r);
-			else if (types[j] == '%')
-			{
-				ft_putchr('%');
-				r++;
-			}
+			ft_handle_targets(ap, types, j++, &r);
 			i++;
-			j++;
 		}
 		else
-		{
-			write(1, &s[i], 1);
-			r++;
-		}
+			r += write(1, &s[i], 1);
 		i++;
 	}
 	va_end(ap);

@@ -6,7 +6,7 @@
 /*   By: bberkass <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 19:42:23 by bberkass          #+#    #+#             */
-/*   Updated: 2021/11/23 22:07:46 by bberkass         ###   ########.fr       */
+/*   Updated: 2021/11/24 00:05:03 by bberkass         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,22 @@ int main()
 
 	printf("parsed -> %s \n", parse("%%%%%%%d"));
 
-	printf("\nog : \n");
+	//printf("\nog : \n");
+	
 	//printf("%%%c", 'A');
-	printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
-	printf("\nft : \n");
+	//printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	
+	//printf("\nft : \n");
+	
 	//ft_printf("%%%c", 'A');
-	ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	//ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
 
 
-	//char *s = "hello";
-	//int ca =    printf("printing pointers => %s \n", NULL);
-	//int cb = ft_printf("printing pointers => %s	\n", NULL);
-	//ft_printf("og => %d \n", ca);
-	//ft_printf("ft => %d \n", cb);
+	char *s = "hello";
+	int ca =    printf("printing pointers => %s \n", NULL);
+	int cb = ft_printf("printing pointers => %s	\n", NULL);
+	ft_printf("og => %d \n", ca);
+	ft_printf("ft => %d \n", cb);
 	
 	//ft_printf("%%this%dis how it works %s %d %c = %c ", 99, "hello world", 15, 'z', 'Z');
 	//ft_printf("unsigned int = %u ", 4294967295);
