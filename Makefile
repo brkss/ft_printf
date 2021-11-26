@@ -5,7 +5,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = $(wildcard *.c) 
+SRCS = ft_convert.c ft_printf_utils.c ft_printf.c 
 
 OBJS = $(SRCS:.c=.o)
 
